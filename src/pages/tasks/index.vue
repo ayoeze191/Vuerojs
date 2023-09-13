@@ -37,7 +37,31 @@ const deleteTask = (id: number) => {
     })
     .catch((err) => console.log(err))
 }
-// useHead({})
+useHead({
+  title: 'My Amazing site',
+  meta: [
+    {
+      property: 'og:title',
+      content: 'Your Page Title',
+    },
+    {
+      property: 'og:description',
+      content: 'Your Page Description',
+    },
+    {
+      property: 'og:image',
+      content: 'URL to Your Image',
+    },
+    {
+      property: 'og:url',
+      content: 'URL to Your Page',
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+  ],
+})
 
 useSeoMeta({
   title: 'Tasks',
