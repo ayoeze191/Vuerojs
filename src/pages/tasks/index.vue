@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue'
 import axios from 'axios'
 // import { createMetaManager } from 'vue-meta';
-import { useHead } from '@vueuse/head'
+import { useHead, useSeoMeta } from '@vueuse/head'
 import { RouterLink } from 'vue-router'
 
 interface Photos {
@@ -38,22 +38,13 @@ const deleteTask = (id: number) => {
     .catch((err) => console.log(err))
 }
 
-useHead({
-  title: 'My blog',
-  meta: [
-    {
-      property: 'og:title',
-      content: 'Ezekiel',
-    },
-    {
-      property: 'og:description',
-      content: 'Your Page Description',
-    },
-    {
-      property: 'og:image',
-      content: 'URL to Your Image',
-    },
-  ],
+useSeoMeta({
+  title: 'Tasks',
+  ogTitle: 'My Amazing site',
+  description: 'This is my amazing site, let me tell you all about it.',
+  ogDescription: 'This is my amazing site, let me tell you all about it.',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image',
 })
 </script>
 

@@ -2,7 +2,7 @@
 import { onUpdated, ref, watchEffect } from 'vue'
 import axios from 'axios'
 // import { createMetaManager } from 'vue-meta';
-import { useHead } from '@vueuse/head'
+import { useHead, useSeoMeta } from '@vueuse/head'
 
 import { useRoute } from 'vue-router'
 
@@ -35,22 +35,13 @@ const fetchTask = async () => {
 watchEffect(fetchTask)
 
 onUpdated(() => {
-  useHead({
-    title: 'My blog',
-    meta: [
-      {
-        property: 'og:title',
-        content: task.value?.title,
-      },
-      {
-        property: 'og:description',
-        content: 'Your Page Description',
-      },
-      {
-        property: 'og:image',
-        content: task.value?.url,
-      },
-    ],
+  useSeoMeta({
+    title: task.value?.title,
+    ogTitle: task.value?.title,
+    description: 'This is my amazing site, let me tell you all about it.',
+    ogDescription: 'This is my amazing site, let me tell you all about it.',
+    ogImage: task.value?.url,
+    // twitterCard: task.value?.title,
   })
 })
 </script>
