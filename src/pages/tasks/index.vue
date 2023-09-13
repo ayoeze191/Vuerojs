@@ -27,7 +27,7 @@ const fetchTasks = async () => {
 }
 watchEffect(fetchTasks)
 
-const deleteTask = <T>(id: number) => {
+const deleteTask = (id: number) => {
   const newtasks = tasks.value.filter((task) => task.id !== id)
   axios
     .delete(`https://jsonplaceholder.typicode.com/photos/${id}`)
