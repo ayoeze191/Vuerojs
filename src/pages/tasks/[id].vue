@@ -36,12 +36,12 @@ watchEffect(fetchTask)
 
 onUpdated(() => {
   useSeoMeta({
-    title: task.value?.title,
+    title: () => `title: ${task.value?.title}`,
     ogTitle: task.value?.title,
     description: 'This is my amazing site, let me tell you all about it.',
     ogDescription: 'This is my amazing site, let me tell you all about it.',
     ogImage: task.value?.url,
-    // twitterCard: task.value?.title,
+    twitterCard: task.value?.title,
   })
 })
 </script>
