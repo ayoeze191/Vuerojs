@@ -176,3 +176,27 @@ if (!isTest) {
     )
   }
 }
+
+// export function generateStaticParams(): Record<
+//   string,
+//   () => Promise<Record<string, string | string[]>[]>
+// > {
+//   // keys are the route path
+//   '/subpages/jobs/[slug]': async () => {
+//     // here you can fetch data from an API
+//     // await fetch('...
+//     return [
+//       { slug: 'job-1' }, // pre-render /subpages/jobs/job-1
+//       { slug: 'job-2' }, // pre-render /subpages/jobs/job-1
+//       { slug: 'job-3' }, // pre-render /subpages/jobs/job-1
+//     ]
+//   },
+
+//   // Rest parameters requires to return an array
+//   '/pages/[...path]': async () => {
+//     return [
+//       { path: ['a', 'b', 'c'] }, // pre-render /pages/a/b/c
+//       { slug: ['a', 'b', 'd'] }, // pre-render /pages/a/b/d
+//     ]
+//   },
+// })
