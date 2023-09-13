@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue'
 import axios from 'axios'
 // import { createMetaManager } from 'vue-meta';
-import { useHead, useSeoMeta } from '@vueuse/head'
+import { useSeoMeta } from '@vueuse/head'
 import { RouterLink } from 'vue-router'
 
 interface Photos {
