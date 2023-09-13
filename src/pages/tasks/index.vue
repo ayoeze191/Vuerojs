@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue'
 import axios from 'axios'
 // import { createMetaManager } from 'vue-meta';
-import { useSeoMeta, useHead } from '@vueuse/head'
+import { useSeoMeta, useHead, useServerSeoMeta } from '@vueuse/head'
 import { RouterLink } from 'vue-router'
 
 interface Photos {
@@ -61,15 +61,6 @@ useHead({
       content: 'summary_large_image',
     },
   ],
-})
-
-useSeoMeta({
-  title: 'Tasks',
-  ogTitle: 'My Amazing site',
-  description: 'This is my amazing site, let me tell you all about it.',
-  ogDescription: 'This is my amazing site, let me tell you all about it.',
-  ogImage: 'https://example.com/image.png',
-  twitterCard: 'summary_large_image',
 })
 </script>
 

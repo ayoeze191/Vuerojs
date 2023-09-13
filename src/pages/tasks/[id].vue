@@ -33,16 +33,30 @@ const fetchTask = async () => {
     })
 }
 watchEffect(fetchTask)
-
-onUpdated(() => {
-  useSeoMeta({
-    title: () => `title: ${task.value?.title}`,
-    ogTitle: task.value?.title,
-    description: 'This is my amazing site, let me tell you all about it.',
-    ogDescription: 'This is my amazing site, let me tell you all about it.',
-    ogImage: task.value?.url,
-    twitterCard: task.value?.title,
-  })
+useHead({
+  title: 'My Amazing site',
+  meta: [
+    {
+      property: 'og:title',
+      content: task.value?.title,
+    },
+    {
+      property: 'og:description',
+      content: task.value?.title,
+    },
+    {
+      property: 'og:image',
+      content: task.value?.title,
+    },
+    {
+      property: 'og:url',
+      content: task.value?.title,
+    },
+    {
+      name: 'twitter:card',
+      content: task.value?.title,
+    },
+  ],
 })
 </script>
 
